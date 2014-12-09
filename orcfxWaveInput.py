@@ -15,8 +15,8 @@ if __name__ == "__main__":
 
         with open('H{}m_T{}s.yml'.format(h,t),'w') as f2:
           for lineA in f1:
-            lineA.replace("WaveHs: 3","WaveHs: {}".format(h)) # WaveHs: 3 indicates the ex. Basecase Hs
-            lineA.replace("WaveTz: 2.84184","WaveTp: {}".format(t)) # WaveTp: 3 indicates the ex. Basecase Tp, want to use Tp instead of zero-cross
-            lineA.replace("WaveGamma: 1","WaveGamma: {}".format(gamma)) # WavePeriod: 3 indicates the ex. Basecase gamma
+            lineA = lineA.replace("WaveHs: 3","WaveHs: {}".format(h)) # WaveHs: 3 indicates the ex. Basecase Hs
+            lineA = lineA.replace("WaveTz: 2.84184","WaveTp: {}".format(t)) # WaveTp: 3 indicates the ex. Basecase Tp, want to use Tp instead of zero-cross
+            lineA = lineA.replace("WaveGamma: 1","WaveGamma: {}".format(gamma)) # WavePeriod: 3 indicates the ex. Basecase gamma
             f2.write(lineA)
         f1.seek(0)
